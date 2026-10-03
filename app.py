@@ -1,14 +1,17 @@
-from flask import Flask, request
+from flask import Flask, render_template
 #from uuid import UUID
 
 app = Flask(__name__)
 
-@app.route("/search")  #query parameter
-def search():
-    name= request.args.get("name","Guest")  #defualt value
-    course = request.args.get("course", "Unknown")
-    return f"{name} is learning {course}"
-
+@app.route("/")
+def home():
+    name="Roshni"  #dynamic name
+    course ="Flask"
+    city ="kalyan"
+    age =24
+    return render_template("index.html",name=name,
+    course=course,
+    city=city,age=age)
 
 if __name__ == "__main__":
     app.run(debug=True) 
