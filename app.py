@@ -5,18 +5,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    first_name="Roshni"
-    last_name="Maurya"  
-    city ="kalyan"
-    price =2400
-    course =["python",
-    "java",
-    "django",
-    "FastAPI"]
-    return render_template("index.html",first_name=first_name,
-    last_name=last_name,
-    course=course,
-    city=city,price=price)
+    is_logged_in = True
+    return render_template("index.html", is_logged_in=is_logged_in)
 
 if __name__ == "__main__":
     app.run(debug=True) 
