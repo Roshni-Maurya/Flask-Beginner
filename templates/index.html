@@ -6,10 +6,23 @@
     <title>Hello World</title>
 </head>
 <body>
-    <h1>Welcome My Page</h1>
+    
     {% if is_logged_in %}   {#  if statement{%%} use this  #}
-     <h1>Welcome Back</h1>
+     <h1>Welcome Back!</h1>
+     {% else %}
+     <h1>Please login..</h1>
      {% endif %}
+
+     {% if marks >= 90 %}
+     <h2>Grade A</h2>
+     {% elif marks >=75%}
+     <h2>Grade B</h2>
+     {% elif marks >=65%}
+     <h2>Grade c</h2>
+     {% else %}
+     <h2>Fail</h2>
+     {% endif %}
+
 
 
 </body>
