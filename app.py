@@ -5,13 +5,18 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    name="Roshni"  #dynamic name
-    course ="Flask"
+    first_name="Roshni"
+    last_name="Maurya"  
     city ="kalyan"
-    age =24
-    return render_template("index.html",name=name,
+    price =2400
+    course =["python",
+    "java",
+    "django",
+    "FastAPI"]
+    return render_template("index.html",first_name=first_name,
+    last_name=last_name,
     course=course,
-    city=city,age=age)
+    city=city,price=price)
 
 if __name__ == "__main__":
     app.run(debug=True) 
