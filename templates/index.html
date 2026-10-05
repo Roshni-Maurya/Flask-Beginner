@@ -7,8 +7,17 @@
 <body>
 
     <h1>Courses: </h1>
+    <ul>
     {% for course in courses %}
     <li>{{loop.index}} {{course}}</li>
     {% endfor %}
+    </ul>
+    <hr>
+    <h1>Student: </h1>
+    <ul>
+    {% for key,value in student.items() %}
+    <li>{{key}} {{value}}</li>
+    {% endfor %}
+    </ul>
 </body>
 </html>

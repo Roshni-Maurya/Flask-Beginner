@@ -12,7 +12,12 @@ def home():
         "java",
         "jija2"
     ]
-    return render_template("index.html", courses=courses)
+    student = {
+        "Name":"Roshni",
+        "Class" :"3rd Year",
+        "Subject":"Python"
+    }
+    return render_template("index.html", courses=courses,student=student)
 
 if __name__ == "__main__":
     app.run(debug=True) 
