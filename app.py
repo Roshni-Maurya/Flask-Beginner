@@ -5,9 +5,14 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    is_logged_in = True
-    marks = 50
-    return render_template("index.html", is_logged_in=is_logged_in,marks=marks)
+    courses = [
+        "python",
+        "dbs",
+        "react",
+        "java",
+        "jija2"
+    ]
+    return render_template("index.html", courses=courses)
 
 if __name__ == "__main__":
     app.run(debug=True) 
