@@ -8,19 +8,13 @@
     <header>
         <h1>Roshni Udaan</h1>
     <hr>
-    <nav>
-        <a href = "/">Home</a>
-        <a href = "/about">About</a>
-         <a href = "/contact">Contact</a>
-    </nav>
-    <hr>
+    {% include "components/navbar.html" %}
     </header>
-    {% block content %}
-                                    <!--dynamic content-->
+
+    {% block content %}                                 <!--dynamic content-->
     {% endblock %}
+
     <p>Different Content</p>
-    <footer>
-        Copyright @2026
-    </footer>
+    {% include "components/footer.html" %}
 </body>
 </html>
