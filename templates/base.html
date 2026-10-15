@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    {# <link rel = "stylsheet" href="/static/css/style.css"> #}
     <title>Flask Course</title>
+    <link rel="stylsheet" href="{{url_for('static',filename='css/style.css')}}">
 </head>
 <body>
+    
     <header>
-        <h1>Roshni Udaan</h1>
+        <h1>Roshni's Feather </h1>
     <hr>
     {% include "components/navbar.html" %}
     </header>
@@ -15,6 +17,11 @@
     {% endblock %}
 
     <p>Different Content</p>
+    
     {% include "components/footer.html" %}
+
+    <script src="{{url_for('static',filename = 'js/script.js')}}">
+
+    </script>
 </body>
 </html>
