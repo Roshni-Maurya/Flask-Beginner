@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {# <link rel = "stylsheet" href="/static/css/style.css"> #}
     <title>Flask Course</title>
-    <link rel="stylsheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
 </head>
 <body>
     
@@ -17,11 +16,10 @@
     {% endblock %}
 
     <p>Different Content</p>
-    
+
     {% include "components/footer.html" %}
 
-    <script src="{{url_for('static',filename = 'js/script.js')}}">
-
+    <script src="{{url_for('static',filename = 'js/script.js')}}"></script>
     </script>
 </body>
 </html>

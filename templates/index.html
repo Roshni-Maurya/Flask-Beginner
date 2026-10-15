@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Welcome to flask Course</h1>
-<button onclick="MyFunc()">click me</button>
+<button onclick="ShowMsg()">click me</button>
+<img src="{{url_for('static',filename='images/logo.png' ,alt='logo')}} "
 <h1>This is my index page</h1>
 {% endblock %}

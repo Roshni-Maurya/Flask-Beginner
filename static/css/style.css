@@ -1,10 +1,7 @@
 body{
-    background-color: aqua;
+    background-color: rgb(248, 233, 218);
     font-family: 'Courier New', Courier, monospace;
 }
 h1{
     color: blue;
-}
-p{
-    background-color: aquamarine;
 }
