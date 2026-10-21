@@ -15,13 +15,17 @@ def about():
 def contact():
      if request.method == 'POST':
           name = request.form.get("username")
-          return f" Hello! Namaste!!! = {name}"
-     return render_template("contact.html")     
+          email = request.form.get("email")
+          message = request.form.get("message")
+          # print("Name: ", name)
+          # print("Email: ", email)
+          # print("Message: ", message)
+     return render_template("contact.html",name= name)     
 
-@app.route("/search")
-def search():
-     query= request.args.get("query")
-     return f" you searched for: {query}"
+# @app.route("/search")
+# def search():
+#      query= request.args.get("query")
+#      return f" you searched for: {query}"
 
 if __name__ == "__main__":
     app.run(debug=True) 
