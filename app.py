@@ -1,7 +1,10 @@
-from flask import Flask, render_template,request,redirect,url_for
+from flask import Flask, render_template,request,redirect,url_for,flash
 #from uuid import UUID
 
+
 app = Flask(__name__)
+
+app.secret_key="Production_of_proc"
 
 @app.route("/")
 def home():
@@ -19,14 +22,17 @@ def contact():
           age = request.form.get("age","").strip()
          
           if not username:
-              return "Name is required" 
+               flash("Name is required !","danger")
+               return redirect(url_for("contact"))
           if not email:
-               return "Email is required" 
+               flash("Email is required !","danger")
+               return redirect(url_for("contact")) 
           if not age:
-              return "Age is required"   
+               flash("Age is required !","danger")
+               return redirect(url_for("contact"))
           if  not age.isdigit():
                return "Age must be a number"   
-          return redirect(url_for("success"))
+          flash("Registration Successull !","success")
 
      return render_template("contact.html")     
 @app.route("/success")
