@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request
+from flask import Flask, render_template,request,redirect,url_for
 #from uuid import UUID
 
 app = Flask(__name__)
@@ -14,9 +14,9 @@ def about():
 @app.route("/contact",methods=["GET","POST"])
 def contact():
      if request.method == 'POST':
-          name = request.form.get("username","").strip()
+          username = request.form.get("username","").strip()
           email = request.form.get("email","").strip()
-          message = request.form.get("age","").strip()
+          age = request.form.get("age","").strip()
          
           if not username:
               return "Name is required" 
@@ -24,11 +24,14 @@ def contact():
                return "Email is required" 
           if not age:
               return "Age is required"   
-          if  age.isdigit():
+          if  not age.isdigit():
                return "Age must be a number"   
-     return "Registration Successfully Completed"
+          return redirect(url_for("success"))
 
      return render_template("contact.html")     
+@app.route("/success")
+def success():
+     return "Registration Successfull"
 
 # @app.route("/search")
 # def search():
