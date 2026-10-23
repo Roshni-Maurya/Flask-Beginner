@@ -1,11 +1,14 @@
 from flask import Flask, render_template,request,redirect,url_for,flash
 #from uuid import UUID
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 app = Flask(__name__)
 
-app.secret_key="Production_of_proc"
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 
 UPLOAD_FOLDER = "uploads"
 
@@ -13,6 +16,8 @@ os.makedirs(UPLOAD_FOLDER,exist_ok=True)
 
 @app.route("/")
 def home():
+     app_name = os.getenv("APP_NAME")
+     return f"Welcome to {app_name}"
      return render_template("index.html")
 
 @app.route("/about")
