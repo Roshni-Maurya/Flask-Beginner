@@ -1,21 +1,15 @@
-from flask import Flask, render_template,request,redirect,url_for,flash
-#from uuid import UUID
-import os
-from dotenv import load_dotenv
-from users.routes import users_bp
-from products.routes import products_bp
-
-load_dotenv()
-
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.register_blueprint(users_bp)
-app.register_blueprint(products_bp)
+app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///app.db"
+
+db = SQLAlchemy(app)
 
 @app.route("/")
 def home():
-     return "Home Page"
+     return "Flask + sqlite + SQLAlchemy is working !"
 
 
 if __name__ == "__main__":
